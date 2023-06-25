@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::group(['BookingController', 'prefix' => 'booking'], function () {
+    
+    Route::get('/available-time-slots', [BookingController::class, 'getAvailableTimeSlots']);
+   
+    // Route::post('/{id}/update', [ImmigrationController::class, 'update']);
 });
