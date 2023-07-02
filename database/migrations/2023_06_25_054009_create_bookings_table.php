@@ -15,6 +15,7 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->UnsignedBiginteger('service_id');
             $table->date('date');
             $table->string('start_time')->nullable();
             $table->string('end_time')->nullable();
@@ -22,6 +23,9 @@ class CreateBookingsTable extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->timestamps();
+
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
+
         });
     }
 

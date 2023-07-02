@@ -23,5 +23,5 @@ Route::group(['BookingController', 'prefix' => 'booking'], function () {
     
     Route::get('/available-time-slots', [BookingController::class, 'getAvailableTimeSlots']);
    
-    // Route::post('/{id}/update', [ImmigrationController::class, 'update']);
+    Route::post('/time-slot', [BookingController::class, 'bookAvailableTimeSlot']);
 });

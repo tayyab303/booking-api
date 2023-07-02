@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
 
      protected function seedServicesRelated() {
         $service1 = Service::create([
+            'name' => 'Men Haircut',
             'availability_upto' => '7',
             'service_time' => '10',
             'interval_time' => '5',
@@ -56,6 +57,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $service2 = Service::create([
+            'name' => 'Woman Haircut',
             'availability_upto' => '7',
             'service_time' => '60',
             'interval_time' => '10',

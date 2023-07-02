@@ -17,4 +17,8 @@ class Service extends Model
     public function plannedOffs(){
         return $this->hasMany(PlannedOff::class);
     }
+
+    public function bookings(){
+        return $this->hasMany(Booking::class);
+    }
 }

@@ -15,6 +15,7 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->tinyInteger('availability_upto');
             $table->string('service_time');
             $table->string('interval_time');
